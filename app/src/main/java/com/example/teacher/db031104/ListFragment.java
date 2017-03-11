@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.lang.reflect.Array;
@@ -47,10 +48,9 @@ public class ListFragment extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                FragmentManager fm = getActivity().getFragmentManager();
-                Fragment f = fm.findFragmentById(R.id.fragment3);
+                View v = getActivity().findViewById(R.id.layout3);
 
-                if (f == null)
+                if (v == null)
                 {
                     Log.d("FRA", "沒有 f_a");
                 }
