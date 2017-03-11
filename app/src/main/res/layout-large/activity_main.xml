@@ -12,10 +12,17 @@
     android:orientation="horizontal">
 
     <fragment
-        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:name="com.example.teacher.db031104.ListFragment"
         android:id="@+id/fragment"
+        tools:layout="@layout/fragment_list"
+        android:layout_width="200dp" />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:name="com.example.teacher.db031104.ArticleFragment"
+        android:id="@+id/fragment3"
         android:layout_weight="1"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_article" />
 </LinearLayout>
