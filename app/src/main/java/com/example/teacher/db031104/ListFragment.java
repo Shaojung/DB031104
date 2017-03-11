@@ -1,6 +1,7 @@
 package com.example.teacher.db031104;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 
@@ -53,10 +55,15 @@ public class ListFragment extends Fragment {
                 if (v == null)
                 {
                     Log.d("FRA", "沒有 f_a");
+                    Intent it = new Intent(getActivity(), ArticleActivity.class);
+                    it.putExtra("data", str[position]);
+                    startActivity(it);
                 }
                 else
                 {
                     Log.d("FRA", "有 f_a");
+                    TextView tv2 = (TextView) getActivity().findViewById(R.id.textView2);
+                    tv2.setText(str[position]);
                 }
 
             }
