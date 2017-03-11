@@ -3,10 +3,13 @@ package com.example.teacher.db031104;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -41,5 +44,22 @@ public class ListFragment extends Fragment {
         ListView lv = (ListView) v.findViewById(R.id.listView);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, str);
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FragmentManager fm = getActivity().getFragmentManager();
+                Fragment f = fm.findFragmentById(R.id.fragment3);
+
+                if (f == null)
+                {
+                    Log.d("FRA", "沒有 f_a");
+                }
+                else
+                {
+                    Log.d("FRA", "有 f_a");
+                }
+
+            }
+        });
     }
 }

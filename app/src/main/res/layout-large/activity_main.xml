@@ -24,5 +24,6 @@
         android:name="com.example.teacher.db031104.ArticleFragment"
         android:id="@+id/fragment3"
         android:layout_weight="1"
+        android:tag="f_a"
         tools:layout="@layout/fragment_article" />
 </LinearLayout>
